@@ -2,7 +2,7 @@ import styles from './Header.module.css'
 import igniteLogo from '../assets/ignite-logo.svg';
 
 
-function Header() {
+export function Header() {
     return (
         <>
             <header className={styles.header}>
@@ -12,4 +12,3 @@ function Header() {
     )
 }
 
-export default Header;
