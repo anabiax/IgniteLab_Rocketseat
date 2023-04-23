@@ -4,7 +4,9 @@
 
 ### Comandos utilizados:
 ****`npm create vite@latest`****  <br>
-****`npm i date-fns`****
+****`npm i date-fns`**** (lib para manipulação de datas - function format) <br>
+
+
 
 React cria o HTML dentro da div id="root". JS manipula a interface da aplicação. <br>
 

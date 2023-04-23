@@ -5,12 +5,13 @@ import { Sidebar } from './components/Sidebar';
 import { Post } from './components/Post';
 import { Header } from './components/Header';
 
+// evitar a todo custo que o back-end me retorne um HTML -> isso deixa o site aberto p/ vulnerabilidades por parte de usuários maliciosos
 const posts = [{
   id: 1,
   author: {
     avatarUrl: "https://github.com/anabiax.png",
     name: "AnaB",
-    role: "Dev junim"
+    role: "Dev jr"
   },
   content: [
     { type: 'paragraph', content: 'Fala galeraa 👋', },
@@ -24,7 +25,7 @@ const posts = [{
   author: {
     avatarUrl: "https://github.com/Marianadsm.png",
     name: "Mari",
-    role: "Dev junim"
+    role: "Dev jr"
   },
   content: [
     { type: 'paragraph', content: 'Opa 👋'},
@@ -42,9 +43,9 @@ export function App() {
       <div className={styles.wrapper}>
         <Sidebar />
         <main>
-            {posts.map(post => {
+            {posts.map(post => {  // iteração == criar uma estrutura de repetição p/ percorrer os posts.
               return(
-                <Post author={post.author} 
+                <Post author={post.author}   
                       content={post.content} 
                       publishedAt={post.publishedAt}
                 />
