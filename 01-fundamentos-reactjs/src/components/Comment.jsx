@@ -2,7 +2,12 @@ import styles from './Comment.module.css';
 import { Trash, ThumbsUp } from "phosphor-react";
 import { Avatar } from './Avatar';
 
-export function Comment() {
+export function Comment({ content, onDeleteComment }) {
+
+    const handleDeleteComment = () => {
+        onDeleteComment(content);  //  a única info que tenho do meu comentário (no melhor dos casos seria o id)
+    }
+
     return (
         <div className={styles.comment}>
             <Avatar hasBorder={false} src="https://github.com/anabiax.png" alt="" />
@@ -15,11 +20,13 @@ export function Comment() {
 
                         </div>
 
-                        <button title="Deletar comentário">
+                        <button title="Deletar comentário" onClick={handleDeleteComment}>
                             <Trash size={24} />
                         </button>
                     </header>
-                    <p>Muito bom!</p>
+
+                    <p>{content}</p>
+
                 </div>
 
                 <footer>

@@ -1,6 +1,5 @@
 import './global.css'
 import styles from './App.module.css';
-
 import { Sidebar } from './components/Sidebar';
 import { Post } from './components/Post';
 import { Header } from './components/Header';
@@ -45,10 +44,14 @@ export function App() {
         <main>
             {posts.map(post => {  // iteração == criar uma estrutura de repetição p/ percorrer os posts.
               return(
-                <Post author={post.author}   
-                      content={post.content} 
-                      publishedAt={post.publishedAt}
+                <Post 
+                    key={post.id}
+                    author={post.author}   
+                    content={post.content} 
+                    publishedAt={post.publishedAt}
                 />
+
+                // "Para cada post eu vou retornar um componente Post. Basicamente uma listagem de posts"
               )
             })}
         </main>
