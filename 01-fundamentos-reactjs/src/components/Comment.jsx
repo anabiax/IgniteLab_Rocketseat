@@ -1,16 +1,29 @@
 import styles from './Comment.module.css';
 import { Trash, ThumbsUp } from "phosphor-react";
 import { Avatar } from './Avatar';
+import { useState } from 'react';
 
 export function Comment({ content, onDeleteComment }) {
+
+    const [likeCount, setLikeCount] = useState(0);
 
     const handleDeleteComment = () => {
         onDeleteComment(content);  //  a única info que tenho do meu comentário (no melhor dos casos seria o id)
     }
 
+    // "eu preciso saber qnts likes já tenho para adicionar + 1". Para atualizá-lo preciso do valor anterior de likes.
+    const handleLikeComment = () => {
+        setLikeCount((state) => {
+
+        return state + 1;
+    });
+    }
+    
+
     return (
         <div className={styles.comment}>
             <Avatar hasBorder={false} src="https://github.com/anabiax.png" alt="" />
+            
             <div className={styles.commentBox}>
                 <div className={styles.commentContent}>
                     <header> 
@@ -30,9 +43,10 @@ export function Comment({ content, onDeleteComment }) {
                 </div>
 
                 <footer>
-                    <button>
-                        <ThumbsUp />
-                        Aplaudir <span>20</span>
+                    <button onClick={handleLikeComment}>  {/* "eu preciso saber qnts likes já tenho para adicionar + 1" */}
+                        <ThumbsUp /> 
+                            Aplaudir 
+                        <span>{likeCount}</span>
                     </button>
                 </footer>
             </div>
