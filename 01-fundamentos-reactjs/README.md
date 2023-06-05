@@ -12,4 +12,7 @@ React cria o HTML dentro da div id="root". JS manipula a interface da aplicaçã
 
 CSS modules utilizado p/ impedir a sobreposição de escopos de estilos (scoped CSS); <br>
 
-Estilização ternária utilizada na página de Avatar via props
+Estilização ternária utilizada na página de Avatar via props.
+
+### O projeto
+![printDoIgnite](https://github.com/anabiax/IgniteLab_Rocketseat/assets/105956403/802f147b-8e99-42c2-9674-511c05cb914d)
